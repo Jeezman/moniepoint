@@ -5,49 +5,94 @@
     </div>
 
     <div class="main">
-      <div class="container">
-        
-        <!-- Form goes here -->
+      <div class="content">
+        <div class="left-section">
+        </div>
+        <div class="right-section">
         <%= form_for(@new_entry) do |f| %>
-            <%= f.text_field :email, :placeholder => "email" %>
-            <%= f.number_field :estimated_pop %>
-            <%= f.text_field :radio_stations, :placeholder => "radio stations" %>
-            <%= f.text_field :tv_stations, :placeholder => "tv stations" %>
-            <%= f.text_field :other_comms, :placeholder => "other comms" %>
-            <%= f.text_field :popular_unions, :placeholder => "popular unions" %>
+            <%= f.select :state, 
+                options_for_select([
+                    ['Abia', 'Abia'], 
+                    ['Adamawa', 'Adamawa'], 
+                    ['Akwa Ibom', 'Akwa Ibom'],
+                    ['Anambra', 'Anambra'],
+                    ['Bauchi', 'Bauchi'],
+                    ['Bayelsa', 'Bayelsa'],
+                    ['Benue', 'Benue'],
+                    ['Borno', 'Borno'],
+                    ['Cross River', 'Cross River'],
+                    ['Delta', 'Delta'],
+                    ['Ebonyi', 'Ebonyi'],
+                    ['Edo', 'Edo'],
+                    ['Ekiti', 'Ekiti'],
+                    ['Enugu', 'Enugu'],
+                    ['Gombe', 'Gombe'],
+                    ['Imo', 'Imo'],
+                    ['Jigawa', 'Jigawa'],
+                    ['Kaduna', 'Kaduna'],
+                    ['Kano', 'Kano'],
+                    ['Katsina', 'Katsina'],
+                    ['Kebbi', 'Kebbi'],
+                    ['Kogi', 'Kogi'],
+                    ['Kwara', 'Kwara'],
+                    ['Lagos', 'Lagos'],
+                    ['Nassarawa', 'Nassarawa'],
+                    ['Niger', 'Niger'],
+                    ['Ogun', 'Ogun'],
+                    ['Ondo', 'Ondo'],
+                    ['Osun', 'Osun'],
+                    ['Oyo', 'Oyo'],
+                    ['Plateau', 'Plateau'],
+                    ['Rivers', 'Rivers'],
+                    ['Sokoto', 'Sokoto'],
+                    ['Taraba', 'Taraba'],
+                    ['Yobe', 'Yobe'],
+                    ['Zamfara', 'Zamfara'],
+                    ], 
+                    required: true) 
+            %>
+            <%= f.text_field :lga, class: 'form-control', :placeholder => "Local Govt" %>
+            <%= f.text_field :town, class: 'form-control', :placeholder => "Town" %>
+            <%= f.text_field :estimated_pop, class: 'form-control', placeholder: "Estimated population" %>
+            <%= f.text_field :radio_stations, class: 'form-control', :placeholder => "radio stations" %>
+            <%= f.text_field :tv_stations, class: 'form-control', :placeholder => "tv stations" %>
+            <%= f.text_field :other_comms, class: 'form-control', :placeholder => "other comms" %>
+            <%= f.text_field :popular_unions, class: 'form-control', :placeholder => "popular unions" %>
             <%= f.select :literacy_level, options_for_select([['Level 1', 'Low'], ['Level 2', 'mid'], ['Level 3', 'high']], required: true) %>
 
             <h2>Agent Location</h2>
-            <%= f.text_field :agent_name, :placeholder => "Full name" %>
-            <%= f.text_field :agent_phone, :placeholder => "Phone number", required: true %>
-            <%= f.number_field(:daily_withdraw_value, required: true, placeholder: "Daily Withdrawal value")%>
-            <%= f.number_field :daily_deposit_count, required: true, placeholder: "Daily Deposit count" %>
-            <%= f.text_field :interest_level, :placeholder => "Interest level", required: true %>
-            <%= f.number_field :no_of_locations, required: true, placeholder: "No. of locations"%>
+            <%= f.text_field :agent_name, class: 'form-control', :placeholder => "Full name" %>
+            <%= f.text_field :agent_phone, class: 'form-control', :placeholder => "Phone number", required: true %>
+            <%= f.number_field :daily_withdraw_value, class: 'form-control', required: true, placeholder: "Daily Withdrawal value" %>
+            <%= f.number_field :daily_deposit_count, class: 'form-control', required: true, placeholder: "Daily Deposit count" %>
+            <%= f.select :interest_level, options_for_select([['High', 'High'], ['Low', 'Low'], ['Indifferent', 'Indifferent']], required: true) %>
+            <%= f.number_field :no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
 
-            <h2>Agent Location</h2>
-            <%= f.text_field :location_serial_no, :placeholder => "Full name" %>
+            <h2>Location</h2>
+            <%= f.text_field :location_serial_no, class: 'form-control', :placeholder => "Serial Number" %>
               <%= f.select :location_platform, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-              <%= f.text_field :location_est, :placeholder => "Year of establishment", required: true %>
-              <%= f.text_field :location_geotag, :placeholder => "Geo tag", required: true %>
+              <%= f.text_field :location_est, class: 'form-control', :placeholder => "Year of establishment", required: true %>
+              <%= f.text_field :location_geotag, class: 'form-control', :placeholder => "Geo tag" %>
 
             <h2>Alajo(s)</h2>
-            <%= f.text_field :alajo_name, :placeholder => "Full name" %>
-            <%= f.text_field :alajo_phone, :placeholder => "Phone number", required: true %>
+            <%= f.text_field :alajo_name, class: 'form-control', :placeholder => "Full name" %>
+            <%= f.text_field :alajo_phone, class: 'form-control', :placeholder => "Phone number", required: true %>
             <%= f.select :alajo_prime_location, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-            <%= f.number_field :alajo_no_of_locations, required: true, placeholder: "No. of locations"%>
-            <%= f.text_field :alajo_union, :placeholder => "Union", required: true %>
-            <%= f.text_field :alajo_population, :placeholder => "Population", required: true %>
-            <%= f.text_field :alajo_avg_age, :placeholder => "Avg age", required: true %>
-            <%= f.text_field :alajo_avg_customer, :placeholder => "Avg customer", required: true %>
-            <%= f.text_field :alajo_avg_daily_contr, :placeholder => "Avg dail contr", required: true %>
-            <%= f.text_field :alajo_avg_acc_bal, :placeholder => "Avg acc bal", required: true %>
+            <%= f.number_field :alajo_no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
+            <%= f.text_field :alajo_union, class: 'form-control', :placeholder => "Union", required: true %>
+            <%= f.text_field :alajo_population, class: 'form-control', :placeholder => "Population", required: true %>
+            <%= f.text_field :alajo_avg_age, class: 'form-control', :placeholder => "Avg age", required: true %>
+            <%= f.text_field :alajo_avg_customer, class: 'form-control', :placeholder => "Avg customer", required: true %>
+            <%= f.text_field :alajo_avg_daily_contr, class: 'form-control', :placeholder => "Avg dail contr", required: true %>
+            <%= f.text_field :alajo_avg_acc_bal, class: 'form-control', :placeholder => "Avg acc bal", required: true %>
 
 
 
            
             <%= f.submit "Submit", :class => "btn"  %>
         <% end %>
+        </div>
+    
 
         
         <ul class="comments">

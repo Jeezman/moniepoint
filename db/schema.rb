@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2020_10_11_005748) do
   enable_extension "plpgsql"
 
   create_table "entries", force: :cascade do |t|
-    t.string "email"
-    t.integer "estimated_pop"
+    t.string "state"
+    t.string "lga"
+    t.string "town"
+    t.string "estimated_pop"
     t.string "radio_stations"
     t.string "tv_stations"
     t.string "other_comms"

@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
   private
   def entry_params
     params.require(:entry).permit(
-      :email, :estimated_pop, :radio_stations, :tv_stations,
+      :state, :lga, :town, :estimated_pop, :radio_stations, :tv_stations,
       :other_comms, :popular_unions, :literacy_level,
       :agent_name, :agent_phone, :daily_withdraw_value,
       :daily_deposit_count, :interest_level, :no_of_locations,
