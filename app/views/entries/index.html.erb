@@ -92,55 +92,6 @@
             <%= f.submit "Submit", :class => "btn"  %>
         <% end %>
         </div>
-    
-
-        
-        <ul class="comments">
-          <% @all_entries.each do |p| %>
-            <div style="margin-bottom: 15px">
-                <h1>Overall</h1>
-                <li><span>Email address: </span><%= p.email %></li>
-                <li><span>Estimated population: </span><%= p.estimated_pop %></li>
-                <li><span>Radio stations: </span><%= p.radio_stations %></li>
-                <li><span>Tv Stations: </span><%= p.tv_stations %></li>
-                <li><span>Other comms: </span><%= p.other_comms %></li>
-                <li><span>Popular unions: </span><%= p.popular_unions %></li>
-                <li><span>Literacy level: </span><%= p.literacy_level %></li>
-            </div>
-
-            <div style="margin-bottom: 15px">
-                <h1>Agent Details</h1>
-                <li><span>Agent name: </span><%= p.agent_name %></li>
-                <li><span>Agent phone: </span><%= p.agent_phone %></li>
-                <li><span>Daily withdraw value: </span><%= p.daily_withdraw_value %></li>
-                <li><span>Daily deposit count: </span><%= p.daily_deposit_count %></li>
-                <li><span>Interest level`: </span><%= p.interest_level %></li>
-                <li><span>Number of locations: </span><%= p.no_of_locations %></li>
-            </div>
-
-            <div style="margin-bottom: 15px">
-                <h1>Agent Locations</h1>
-                <li><span>Location serial no: </span><%= p.location_serial_no %></li>
-                <li><span>Location platform: </span><%= p.location_platform %></li>
-                <li><span>Location Establishment: </span><%= p.location_est %></li>
-                <li><span>Location geotag: </span><%= p.location_geotag %></li>
-            </div>
-
-            <div style="margin-bottom: 15px">
-                <h1>Alajo</h1>
-                <li><span>Full name: </span><%= p.alajo_name %></li>
-                <li><span>Phone number: </span><%= p.alajo_phone %></li>
-                <li><span>Prime location: </span><%= p.alajo_prime_location %></li>
-                <li><span>Number of locations: </span><%= p.alajo_no_of_locations %></li>
-                <li><span>Union: </span><%= p.alajo_union %></li>
-                <li><span>Population: </span><%= p.alajo_population %></li>
-                <li><span>Average age: </span><%= p.alajo_avg_age %></li>
-                <li><span>Average customer age: </span><%= p.alajo_avg_customer %></li>
-                <li><span>Average daily contribution: </span><%= p.alajo_avg_daily_contr %></li>
-                <li><span>Average account balance: </span><%= p.alajo_avg_acc_bal %></li>
-            </div>
-          <% end %>
-        </ul>
 
       </div>
     </div>

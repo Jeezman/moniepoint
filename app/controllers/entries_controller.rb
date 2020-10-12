@@ -4,6 +4,10 @@ class EntriesController < ApplicationController
     @all_entries = Entry.order(created_at: :desc).all
   end
 
+  def show
+    @all_entries = Entry.order(created_at: :desc).all
+  end
+
   def create
     @new_entry = Entry.new(entry_params)
     if @new_entry.save

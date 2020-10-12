@@ -1,0 +1,107 @@
+<table id="customers">
+  <h1>Entry</h1>
+  <tr>
+    <th>S/N</th>
+    <th>State</th>
+    <th>LGA</th>
+    <th>Town</th>
+    <th>Estimated population</th>
+    <th>Radio stations</th>
+    <th>Tv Stations</th>
+    <th>>Other comms</th>
+    <th>Popular unions</th>
+    <th>Literacy level</th>
+  </tr>
+  <% @all_entries.each do |p| %>
+    <tr>
+        <td><%= p.id %></td>
+        <td><%= p.state %></td>
+        <td><%= p.lga %></td>
+        <td><%= p.town %></td>
+        <td><%= p.estimated_pop %></td>
+        <td><%= p.radio_stations %></td>
+        <td><%= p.tv_stations %></td>
+        <td><%= p.other_comms %></td>
+        <td><%= p.popular_unions %></td>
+        <td><%= p.literacy_level %></td>
+    </tr>
+  <% end %>
+  
+</table>
+<h1>Agent</h1>
+<table id="customers">
+  <tr>
+    <th>S/N</th>
+    <th>Agent name</th>
+    <th>Agent phone</th>
+    <th>Daily withdraw value</th>
+    <th>Daily deposit count</th>
+    <th>Interest level</th>
+    <th>Number of locations</th>
+  </tr>
+  <% @all_entries.each do |p| %>
+    <tr>
+        <td><%= p.id %></td>
+        <td><%= p.agent_name %></td>
+        <td><%= p.agent_phone %></td>
+        <td><%= p.daily_withdraw_value %></td>
+        <td><%= p.daily_deposit_count %></td>
+        <td><%= p.interest_level %></td>
+        <td><%= p.no_of_locations %></td>
+    </tr>
+  <% end %>
+  
+</table>
+
+<h1>Location</h1>
+<table id="customers">
+  <tr>
+    <th>S/N</th>
+    <th>Location serial no</th>
+    <th>Location platform</th>
+    <th>Location Establishment</th>
+    <th>Location geotag</th>
+  </tr>
+  <% @all_entries.each do |p| %>
+    <tr>
+        <td><%= p.id %></td>
+        <td><%= p.location_serial_no %></td>
+        <td><%= p.location_platform %></td>
+        <td><%= p.location_est %></td>
+        <td><%= p.location_geotag %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>Alajo</h1>
+<table id="customers">
+  <tr>
+    <th>S/N</th>
+    <th>Full name</th>
+    <th>Phone no.</th>
+    <th>Prime location</th>
+    <th>Number of locations</th>
+    <th>Union</th>
+    <th>Population</th>
+    <th>Average age</th>
+    <th>Average customer age</th>
+    <th>Average daily contribution</th>
+    <th>Average account balance</th>
+  </tr>
+  <% @all_entries.each do |p| %>
+    <tr>
+        <td><%= p.id %></td>
+        <td><%= p.alajo_name %></td>
+        <td><%= p.alajo_phone %></td>
+        <td><%= p.alajo_prime_location %></td>
+        <td><%= p.alajo_no_of_locations %></td>
+        <td><%= p.alajo_union %></td>
+        <td><%= p.alajo_population %></td>
+        <td><%= p.alajo_avg_age %></td>
+        <td><%= p.alajo_avg_customer %></td>
+        <td><%= p.alajo_avg_daily_contr %></td>
+        <td><%= p.alajo_avg_acc_bal %></td>
+    </tr>
+  <% end %>
+  
+</table>
