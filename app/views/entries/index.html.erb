@@ -61,12 +61,19 @@
             <%= f.select :literacy_level, options_for_select([['Level 1', 'Low'], ['Level 2', 'mid'], ['Level 3', 'high']], required: true) %>
 
             <h2>Agent Location</h2>
-            <%= f.text_field :agent_name, class: 'form-control', :placeholder => "Full name" %>
-            <%= f.text_field :agent_phone, class: 'form-control', :placeholder => "Phone number", required: true %>
-            <%= f.number_field :daily_withdraw_value, class: 'form-control', required: true, placeholder: "Daily Withdrawal value" %>
-            <%= f.number_field :daily_deposit_count, class: 'form-control', required: true, placeholder: "Daily Deposit count" %>
-            <%= f.select :interest_level, options_for_select([['High', 'High'], ['Low', 'Low'], ['Indifferent', 'Indifferent']], required: true) %>
-            <%= f.number_field :no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
+            <div class="location-wrap">
+                <div class="location-wrap-content">
+                    <%= f.text_field :agent_name, class: 'form-control', :placeholder => "Full name" %>
+                    <%= f.text_field :agent_phone, class: 'form-control', :placeholder => "Phone number", required: true %>
+                    <%= f.number_field :daily_withdraw_value, class: 'form-control', required: true, placeholder: "Daily Withdrawal value" %>
+                    <%= f.number_field :daily_deposit_count, class: 'form-control', required: true, placeholder: "Daily Deposit count" %>
+                    <%= f.select :interest_level, options_for_select([['High', 'High'], ['Low', 'Low'], ['Indifferent', 'Indifferent']], required: true) %>
+                    <%= f.number_field :no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
+                </div>
+                <button class="location-wrap-btn">Add New Location</button>
+                
+            </div>
+            
 
             <h2>Location</h2>
             <%= f.text_field :location_serial_no, class: 'form-control', :placeholder => "Serial Number" %>
