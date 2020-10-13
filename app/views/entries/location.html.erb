@@ -1,0 +1,20 @@
+<div>
+    <h1>Location data</h1>
+    <table id="customers">
+    <tr>
+        <th>S/N</th>
+        <th>Platform</th>
+        <th>Date of establishment</th>
+        <th>Geotag</th>
+    </tr>
+    <% @locations.each do |l| %>
+        <tr>
+            <td><%= l.id %></td>
+            <td><%= l.location_platform %></td>
+            <td><%= l.location_est %></td>
+            <td><%= l.location_geotag %></td>
+        </tr>
+    <% end %>
+    
+    </table>
+</div>
