@@ -62,7 +62,7 @@
             <%= f.text_field :popular_unions, class: 'form-control', :placeholder => "popular unions" %>
             <%= f.select :literacy_level, options_for_select([['Level 1', 'Low'], ['Level 2', 'mid'], ['Level 3', 'high']], required: true) %>
 
-            <h2>Agent Location</h2>
+            <h2>Agent</h2>
             <div class="location-wrap">
                 <div class="location-wrap-content">
                     <%= f.text_field :agent_name, class: 'form-control', :placeholder => "Full name" %>
@@ -72,10 +72,20 @@
                     <%= f.select :interest_level, options_for_select([['High', 'High'], ['Low', 'Low'], ['Indifferent', 'Indifferent']], required: true) %>
                     <%= f.number_field :no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
                 </div>
-                <div class="location-wrap-btn" onclick="addNewLocationForm()">Add New Location</div>
                 
             </div>
-            
+
+            <h2>Location</h2>
+            <div id="location" class="location-wrap">
+                <div class="location-wrap-content">
+                <%= f.fields_for :locations do |section| %>
+                    <%= section.select :location_platform, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
+                    <%= section.text_field :location_est, class: 'form-control', :placeholder => "Year of establishment", required: true %>
+                    <%= section.text_field :location_geotag, class: 'form-control', :placeholder => "Year of establishment", required: true %>
+                <% end %> 
+                <div class="location-wrap-btn" onclick="addNewLocationForm()">Add New Location</div>
+                </div>
+            </div>
 
             <h2>Alajo(s)</h2>
             <%= f.text_field :alajo_name, class: 'form-control', :placeholder => "Full name" %>
