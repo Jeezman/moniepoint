@@ -1,3 +1,5 @@
+    <%= javascript_pack_tag 'index' %>
+
     <div class="header">
       <div class="container">
         <h1>Monniepoint LSE</h1>
@@ -70,16 +72,10 @@
                     <%= f.select :interest_level, options_for_select([['High', 'High'], ['Low', 'Low'], ['Indifferent', 'Indifferent']], required: true) %>
                     <%= f.number_field :no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
                 </div>
-                <button class="location-wrap-btn">Add New Location</button>
+                <div class="location-wrap-btn" onclick="addNewLocationForm()">Add New Location</div>
                 
             </div>
             
-
-            <h2>Location</h2>
-            <%= f.text_field :location_serial_no, class: 'form-control', :placeholder => "Serial Number" %>
-              <%= f.select :location_platform, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-              <%= f.text_field :location_est, class: 'form-control', :placeholder => "Year of establishment", required: true %>
-              <%= f.text_field :location_geotag, class: 'form-control', :placeholder => "Geo tag" %>
 
             <h2>Alajo(s)</h2>
             <%= f.text_field :alajo_name, class: 'form-control', :placeholder => "Full name" %>

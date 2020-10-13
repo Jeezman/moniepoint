@@ -1,6 +1,7 @@
 <table id="customers">
   <h1>Entry</h1>
   <tr>
+    <th>Link</th>
     <th>S/N</th>
     <th>State</th>
     <th>LGA</th>
@@ -14,6 +15,7 @@
   </tr>
   <% @all_entries.each do |p| %>
     <tr>
+        <td><%= link_to "Location", entry_path(p)%></td>
         <td><%= p.id %></td>
         <td><%= p.state %></td>
         <td><%= p.lga %></td>
@@ -50,28 +52,8 @@
         <td><%= p.no_of_locations %></td>
     </tr>
   <% end %>
-  
 </table>
 
-<h1>Location</h1>
-<table id="customers">
-  <tr>
-    <th>S/N</th>
-    <th>Location serial no</th>
-    <th>Location platform</th>
-    <th>Location Establishment</th>
-    <th>Location geotag</th>
-  </tr>
-  <% @all_entries.each do |p| %>
-    <tr>
-        <td><%= p.id %></td>
-        <td><%= p.location_serial_no %></td>
-        <td><%= p.location_platform %></td>
-        <td><%= p.location_est %></td>
-        <td><%= p.location_geotag %></td>
-    </tr>
-  <% end %>
-</table>
 
 <h1>Alajo</h1>
 <table id="customers">

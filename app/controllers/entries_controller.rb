@@ -1,11 +1,17 @@
 class EntriesController < ApplicationController
   def index
+    @entries = Entry.all
     @new_entry = Entry.new
     @all_entries = Entry.order(created_at: :desc).all
   end
 
   def show
     @all_entries = Entry.order(created_at: :desc).all
+  end
+
+  def location
+    @entry = Entry.find(params[:id])
+    @locations = @entry.locations
   end
 
   def create
