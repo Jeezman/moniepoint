@@ -12,67 +12,112 @@
         </div>
         <div class="right-section">
         <%= form_for(@new_entry) do |f| %>
-            <%= f.select :state, 
-                options_for_select([
-                    ['Abia', 'Abia'], 
-                    ['Adamawa', 'Adamawa'], 
-                    ['Akwa Ibom', 'Akwa Ibom'],
-                    ['Anambra', 'Anambra'],
-                    ['Bauchi', 'Bauchi'],
-                    ['Bayelsa', 'Bayelsa'],
-                    ['Benue', 'Benue'],
-                    ['Borno', 'Borno'],
-                    ['Cross River', 'Cross River'],
-                    ['Delta', 'Delta'],
-                    ['Ebonyi', 'Ebonyi'],
-                    ['Edo', 'Edo'],
-                    ['Ekiti', 'Ekiti'],
-                    ['Enugu', 'Enugu'],
-                    ['Gombe', 'Gombe'],
-                    ['Imo', 'Imo'],
-                    ['Jigawa', 'Jigawa'],
-                    ['Kaduna', 'Kaduna'],
-                    ['Kano', 'Kano'],
-                    ['Katsina', 'Katsina'],
-                    ['Kebbi', 'Kebbi'],
-                    ['Kogi', 'Kogi'],
-                    ['Kwara', 'Kwara'],
-                    ['Lagos', 'Lagos'],
-                    ['Nassarawa', 'Nassarawa'],
-                    ['Niger', 'Niger'],
-                    ['Ogun', 'Ogun'],
-                    ['Ondo', 'Ondo'],
-                    ['Osun', 'Osun'],
-                    ['Oyo', 'Oyo'],
-                    ['Plateau', 'Plateau'],
-                    ['Rivers', 'Rivers'],
-                    ['Sokoto', 'Sokoto'],
-                    ['Taraba', 'Taraba'],
-                    ['Yobe', 'Yobe'],
-                    ['Zamfara', 'Zamfara'],
-                    ], 
-                    required: true) 
-            %>
-            <%= f.text_field :lga, class: 'form-control', :placeholder => "Local Govt" %>
-            <%= f.text_field :town, class: 'form-control', :placeholder => "Town" %>
-            <%= f.text_field :estimated_pop, class: 'form-control', placeholder: "Estimated population" %>
-            <%= f.text_field :radio_stations, class: 'form-control', :placeholder => "radio stations" %>
-            <%= f.text_field :tv_stations, class: 'form-control', :placeholder => "tv stations" %>
-            <%= f.text_field :other_comms, class: 'form-control', :placeholder => "other comms" %>
-            <%= f.text_field :popular_unions, class: 'form-control', :placeholder => "popular unions" %>
-            <%= f.select :literacy_level, options_for_select([['Level 1', 'Low'], ['Level 2', 'mid'], ['Level 3', 'high']], required: true) %>
+            <div class="form-label-wrap">
+              <%= f.label(:state, "Select state", class: "form-label") %>
+              <%= f.select :state, 
+                  options_for_select([
+                      ['Abia', 'Abia'], 
+                      ['Adamawa', 'Adamawa'], 
+                      ['Akwa Ibom', 'Akwa Ibom'],
+                      ['Anambra', 'Anambra'],
+                      ['Bauchi', 'Bauchi'],
+                      ['Bayelsa', 'Bayelsa'],
+                      ['Benue', 'Benue'],
+                      ['Borno', 'Borno'],
+                      ['Cross River', 'Cross River'],
+                      ['Delta', 'Delta'],
+                      ['Ebonyi', 'Ebonyi'],
+                      ['Edo', 'Edo'],
+                      ['Ekiti', 'Ekiti'],
+                      ['Enugu', 'Enugu'],
+                      ['Gombe', 'Gombe'],
+                      ['Imo', 'Imo'],
+                      ['Jigawa', 'Jigawa'],
+                      ['Kaduna', 'Kaduna'],
+                      ['Kano', 'Kano'],
+                      ['Katsina', 'Katsina'],
+                      ['Kebbi', 'Kebbi'],
+                      ['Kogi', 'Kogi'],
+                      ['Kwara', 'Kwara'],
+                      ['Lagos', 'Lagos'],
+                      ['Nassarawa', 'Nassarawa'],
+                      ['Niger', 'Niger'],
+                      ['Ogun', 'Ogun'],
+                      ['Ondo', 'Ondo'],
+                      ['Osun', 'Osun'],
+                      ['Oyo', 'Oyo'],
+                      ['Plateau', 'Plateau'],
+                      ['Rivers', 'Rivers'],
+                      ['Sokoto', 'Sokoto'],
+                      ['Taraba', 'Taraba'],
+                      ['Yobe', 'Yobe'],
+                      ['Zamfara', 'Zamfara'],
+                      ], 
+                      required: true) 
+              %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:lga, "LGA", class: "form-label") %>
+              <%= f.text_field :lga, class: 'form-control', :placeholder => "Local Govt" %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:town, "Town", class: "form-label") %>
+              <%= f.text_field :town, class: 'form-control', :placeholder => "Town" %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:estimated_pop, "Estimated Population", class: "form-label") %>
+              <%= f.text_field :estimated_pop, class: 'form-control' %>
+            </div>
+
+            <div class="form-label-wrap">
+            <%= f.label(:radio_stations, "Radio stations", class: "form-label") %>
+            <%= f.text_field :radio_stations, class: 'form-control' %>
+            </div>
+
+            <div class="form-label-wrap">
+            <%= f.label(:tv_stations, "Tv stations", class: "form-label") %>
+            <%= f.text_field :tv_stations, class: 'form-control'%>
+            </div>
+
+            <div class="form-label-wrap">
+            <%= f.label(:other_comms, "Other comms", class: "form-label") %>
+            <%= f.text_field :other_comms, class: 'form-control' %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:popular_unions, "Popular unions", class: "form-label") %>
+              <%= f.text_field :popular_unions, class: 'form-control' %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:literacy_level, "Literacy level", class: "form-label") %>
+              <%= f.select :literacy_level, options_for_select([['Level 1', 'Low'], ['Level 2', 'mid'], ['Level 3', 'high']], required: true) %>
+            </div>
 
             <h2>Agent</h2>
             <div class="location-wrap">
                 <div class="location-wrap-content">
-                    <%= f.text_field :agent_name, class: 'form-control', :placeholder => "Full name" %>
-                    <%= f.text_field :agent_phone, class: 'form-control', :placeholder => "Phone number", required: true %>
-                    <%= f.number_field :daily_withdraw_value, class: 'form-control', required: true, placeholder: "Daily Withdrawal value" %>
-                    <%= f.number_field :daily_deposit_count, class: 'form-control', required: true, placeholder: "Daily Deposit count" %>
+                    <%= f.label(:agent_name, "Full name", class: "form-label") %>
+                    <%= f.text_field :agent_name, class: 'form-control' %>
+
+                    <%= f.label(:agent_phone, "Phone", class: "form-label") %>
+                    <%= f.text_field :agent_phone, class: 'form-control', required: true %>
+
+                    <%= f.label(:daily_withdraw_value, "Daily Withdrawal value", class: "form-label") %>
+                    <%= f.number_field :daily_withdraw_value, class: 'form-control', required: true %>
+
+                    <%= f.label(:daily_deposit_count, "Daily deposit count", class: "form-label") %>
+                    <%= f.number_field :daily_deposit_count, class: 'form-control', required: true %>
+
+                    <%= f.label(:interest_level, "Interest level", class: "form-label") %>
                     <%= f.select :interest_level, options_for_select([['High', 'High'], ['Low', 'Low'], ['Indifferent', 'Indifferent']], required: true) %>
-                    <%= f.number_field :no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
+
+                    <%= f.label(:no_of_locations, "No. of locations", class: "form-label") %>
+                    <%= f.number_field :no_of_locations, class: 'form-control', required: true %>
                 </div>
-                
             </div>
 
             <h2>Location</h2>
@@ -88,20 +133,55 @@
             </div>
 
             <h2>Alajo(s)</h2>
-            <%= f.text_field :alajo_name, class: 'form-control', :placeholder => "Full name" %>
-            <%= f.text_field :alajo_phone, class: 'form-control', :placeholder => "Phone number", required: true %>
-            <%= f.select :alajo_prime_location, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-            <%= f.number_field :alajo_no_of_locations, class: 'form-control', required: true, placeholder: "No. of locations"%>
-            <%= f.text_field :alajo_union, class: 'form-control', :placeholder => "Union", required: true %>
-            <%= f.text_field :alajo_population, class: 'form-control', :placeholder => "Population", required: true %>
-            <%= f.text_field :alajo_avg_age, class: 'form-control', :placeholder => "Avg age", required: true %>
-            <%= f.text_field :alajo_avg_customer, class: 'form-control', :placeholder => "Avg customer", required: true %>
-            <%= f.text_field :alajo_avg_daily_contr, class: 'form-control', :placeholder => "Avg dail contr", required: true %>
-            <%= f.text_field :alajo_avg_acc_bal, class: 'form-control', :placeholder => "Avg acc bal", required: true %>
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_name, "Full name", class: "form-label") %>
+              <%= f.text_field :alajo_name, class: 'form-control' %>
+            </div>
 
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_phone, "Phone number", class: "form-label") %>
+              <%= f.text_field :alajo_phone, class: 'form-control', required: true %>
+            </div>
 
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_prime_location, "Prime location", class: "form-label") %>
+              <%= f.select :alajo_prime_location, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
+            </div>
 
-           
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_no_of_locations, "No. of location", class: "form-label") %>
+              <%= f.number_field :alajo_no_of_locations, class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_union, "Name of Union", class: "form-label") %>
+              <%= f.text_field :alajo_union, class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_population, "Population of union", class: "form-label") %>
+              <%= f.text_field :alajo_population, class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_avg_age, "Average age in union", class: "form-label") %>
+              <%= f.text_field :alajo_avg_age, class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_avg_customer, "Average customer", class: "form-label") %>
+              <%= f.text_field :alajo_avg_customer, class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_avg_daily_contr, "Average daily contribution", class: "form-label") %>
+              <%= f.text_field :alajo_avg_daily_contr, class: 'form-control', required: true %>
+            </div>
+
+            <div class="form-label-wrap">
+              <%= f.label(:alajo_avg_acc_bal, "Average account balance", class: "form-label") %>
+              <%= f.text_field :alajo_avg_acc_bal, class: 'form-control', required: true %>
+            </div>
             <%= f.submit "Submit", :class => "btn"  %>
         <% end %>
         </div>

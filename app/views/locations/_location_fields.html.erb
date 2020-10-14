@@ -1,3 +1,8 @@
+<%= section.label(:location_platform, "Platform used", class: "form-label") %>
 <%= section.select :location_platform, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-<%= section.text_field :location_est, class: 'form-control', :placeholder => "Year of establishment", required: true %>
-<%= section.text_field :location_geotag, class: 'form-control', :placeholder => "Year of establishment", required: true %>
+
+<%= section.label(:location_est, "Year of establishment", class: "form-label") %>
+<%= section.text_field :location_est, class: 'form-control', required: true %>
+
+<%= section.label(:location_geotag, "Geotag", class: "form-label") %>
+<%= section.text_field :location_geotag, class: 'form-control', id: 'geo-location', required: true %>

@@ -21,6 +21,7 @@ $(function() {
     // $( "p" ).text( "The DOM is now loaded and can be manipulated." );
     var geoInput = $( "#geo-location" )
     function getLocation() {
+        console.log('fetching geolocation')
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
         } else {

@@ -142,6 +142,14 @@ h1, h2, h3, h4, h5, h6 {
       width: 100%;
   }
 
+  .form-label {
+      color: #666;
+      font-size: 1rem;
+      font-family: Arial, Helvetica, sans-serif !important;
+      margin-bottom: 5px;
+      display: block;
+  }
+
   .location-wrap-btn {
     color: #fff;
     background-color: #20a8d8;
@@ -156,4 +164,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: .25rem;
     margin: 0 auto;
     float: right;
+  }
+
+  .form-label-wrap {
+      width: 100%;
   }
