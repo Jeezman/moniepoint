@@ -132,55 +132,52 @@
                 <%= link_to_add_fields('Add New Location', f, 'locations', :locations, 'location-wrap-btn') %>
             </div>
 
-            <h2>Alajo(s)</h2>
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_name, "Full name", class: "form-label") %>
-              <%= f.text_field :alajo_name, class: 'form-control' %>
-            </div>
+            <div id="alajo" class="alajo-wrap">
+              <div class="location-wrap-btn alajo" id="alajo-btn">Add Alajo</div>
+              <div id="alajo-wrap-inner" class="alajo-wrap-inner">
+                <h2>Alajo(s)</h2>
+                <div class="form-label-wrap">
+                  <%= f.label(:alajo_name, "Full name", class: "form-label") %>
+                  <%= f.text_field :alajo_name, class: 'form-control' %>
+                </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_phone, "Phone number", class: "form-label") %>
-              <%= f.text_field :alajo_phone, class: 'form-control', required: true %>
-            </div>
+                <div class="form-label-wrap">
+                  <%= f.label(:alajo_phone, "Phone number", class: "form-label") %>
+                  <%= f.text_field :alajo_phone, class: 'form-control', required: true %>
+                </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_prime_location, "Prime location", class: "form-label") %>
-              <%= f.select :alajo_prime_location, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-            </div>
+                <div class="form-label-wrap">
+                  <%= f.label(:alajo_union, "Name of Union", class: "form-label") %>
+                  <%= f.text_field :alajo_union, class: 'form-control', required: true %>
+                </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_no_of_locations, "No. of location", class: "form-label") %>
-              <%= f.number_field :alajo_no_of_locations, class: 'form-control', required: true %>
-            </div>
+                <div class="form-wrap">
+                  <div class="form-label-wrap half-width">
+                    <%= f.label(:alajo_population, "Population of union", class: "form-label") %>
+                    <%= f.text_field :alajo_population, class: 'form-control', required: true %>
+                  </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_union, "Name of Union", class: "form-label") %>
-              <%= f.text_field :alajo_union, class: 'form-control', required: true %>
-            </div>
+                  <div class="form-label-wrap half-width">
+                    <%= f.label(:alajo_avg_age, "Average age in union", class: "form-label") %>
+                    <%= f.text_field :alajo_avg_age, class: 'form-control', required: true %>
+                  </div>
+                </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_population, "Population of union", class: "form-label") %>
-              <%= f.text_field :alajo_population, class: 'form-control', required: true %>
-            </div>
+                <div class="form-label-wrap">
+                  <%= f.label(:alajo_avg_customer, "Average customer", class: "form-label") %>
+                  <%= f.text_field :alajo_avg_customer, class: 'form-control', required: true %>
+                </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_avg_age, "Average age in union", class: "form-label") %>
-              <%= f.text_field :alajo_avg_age, class: 'form-control', required: true %>
-            </div>
+                <div class="form-label-wrap">
+                  <%= f.label(:alajo_avg_daily_contr, "Average daily contribution", class: "form-label") %>
+                  <%= f.text_field :alajo_avg_daily_contr, class: 'form-control', required: true %>
+                </div>
 
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_avg_customer, "Average customer", class: "form-label") %>
-              <%= f.text_field :alajo_avg_customer, class: 'form-control', required: true %>
-            </div>
-
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_avg_daily_contr, "Average daily contribution", class: "form-label") %>
-              <%= f.text_field :alajo_avg_daily_contr, class: 'form-control', required: true %>
-            </div>
-
-            <div class="form-label-wrap">
-              <%= f.label(:alajo_avg_acc_bal, "Average account balance", class: "form-label") %>
-              <%= f.text_field :alajo_avg_acc_bal, class: 'form-control', required: true %>
+                <div class="form-label-wrap">
+                  <%= f.label(:alajo_avg_acc_bal, "Average account balance", class: "form-label") %>
+                  <%= f.text_field :alajo_avg_acc_bal, class: 'form-control', required: true %>
+                </div>
+              </div>
             </div>
             <%= f.submit "Submit", :class => "btn"  %>
         <% end %>

@@ -19,6 +19,16 @@ require('jquery')
 $(function() {
     console.log('jquery don load')
     // $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+
+    let alajo = $( "#alajo-wrap-inner" ).hide()
+
+    let alajoBtn = $( "#alajo-btn")
+    
+    alajoBtn.on("click", function() {
+      alajo.show()
+      alajoBtn.hide()
+    })
+
     var geoInput = $( "#geo-location" )
     function getLocation() {
         console.log('fetching geolocation')

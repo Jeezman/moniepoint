@@ -18,8 +18,8 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.integer :no_of_locations
       t.string :alajo_name
       t.string :alajo_phone
-      t.string :alajo_prime_location
-      t.integer :alajo_no_of_locations
+      # t.string :alajo_prime_location
+      # t.integer :alajo_no_of_locations
       t.string :alajo_union
       t.string :alajo_population
       t.string :alajo_avg_age

@@ -89,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     line-height: 1.2;
     color: inherit;
+    clear: both;
 }
 
 .btn {
@@ -142,12 +143,22 @@ h1, h2, h3, h4, h5, h6 {
       width: 100%;
   }
 
+  .form-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  }
+
   .form-label {
       color: #666;
       font-size: 1rem;
       font-family: Arial, Helvetica, sans-serif !important;
       margin-bottom: 5px;
       display: block;
+  }
+
+  .form-label {
+      width: 100%;
   }
 
   .location-wrap-btn {
@@ -166,6 +177,25 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
   }
 
+  .location-wrap-btn.alajo {
+      float: left;
+      clear: both;
+      margin-bottom: 45px;
+
+  }
+
   .form-label-wrap {
       width: 100%;
+  }
+
+  .form-label-wrap.half-width {
+      width: 48%
+  }
+
+  .alajo-wrap {
+      width: 100%;
+  }
+
+  .alajo-wrap-inner {
+    width: 100%; 
   }
