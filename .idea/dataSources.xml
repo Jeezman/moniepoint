@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails monniepoint-lse: development" uuid="f1c86c09-ffed-43c2-bda3-8c079479bff6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/monniepoint_lse</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails monniepoint-lse: default" uuid="da99b434-4b41-47ff-b7d8-4b1954822e36">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/monniepoint_lse</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails monniepoint-lse: test" uuid="b8803940-13a2-42a0-b9bc-63b5fec05680">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/monniepoint_lse</jdbc-url>
+    </data-source>
+  </component>
+</project>
