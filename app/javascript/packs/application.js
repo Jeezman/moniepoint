@@ -19,6 +19,22 @@ require('jquery')
 $(function() {
     console.log('jquery don load')
     // $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+    var geoInput = $( "#geo-location" )
+    function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+        geoInput.val("Geolocation is not supported by this browser")
+        }
+      }
+      
+      function showPosition(position) {
+        let t = "Latitude: " + position.coords.latitude +
+        ", Longitude: " + position.coords.longitude;
+        geoInput.val(t)
+      }
+
+    $( "#geo-location" ).on("focus", getLocation);
 
     function cloneDiv() {
         let item = $('#location-fields');
