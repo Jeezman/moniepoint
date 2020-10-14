@@ -77,14 +77,14 @@
 
             <h2>Location</h2>
             <div id="location" class="location-wrap">
-                <div class="location-wrap-content" id="location-wrap-content">
-                  <%= f.fields_for :locations do |section| %>
-                    <div id="location-fields">
-                      <%= render "location", f: section %>
-                    </div>
-                  <% end %> 
+                <div class="location-wrap-content">
+                  <div id="locations-list">
+                    <%= f.fields_for :locations do |section| %>
+                      <%= render 'locations/location_fields', section: section %>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="location-wrap-btn" id="location-btn">Add New Location</div>
+                <%= link_to_add_fields('Add New Location', f, 'locations', :locations, 'location-wrap-btn') %>
             </div>
 
             <h2>Alajo(s)</h2>
