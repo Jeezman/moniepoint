@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
   def index
     @entries = Entry.all
     @new_entry = Entry.new
+    @new_entry.locations.build
     @all_entries = Entry.order(created_at: :desc).all
   end
 
@@ -17,7 +18,7 @@ class EntriesController < ApplicationController
 
   def create
     @new_entry = Entry.new(entry_params)
-    @new_entry.locations.build(location_params)
+    # @new_entry.locations.build(location_params)
     if @new_entry.save
       redirect_to root_path
     end
@@ -32,7 +33,8 @@ class EntriesController < ApplicationController
       :daily_deposit_count, :interest_level, :no_of_locations,
       :alajo_name, :alajo_phone, :alajo_prime_location, :alajo_no_of_locations,
       :alajo_union, :alajo_population, :alajo_avg_age, :alajo_avg_customer,
-      :alajo_avg_daily_contr, :alajo_avg_acc_bal
+      :alajo_avg_daily_contr, :alajo_avg_acc_bal,
+      locations_attributes: [:location_platform, :location_est, :location_geotag]
     )
   end
 

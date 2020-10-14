@@ -78,13 +78,13 @@
             <h2>Location</h2>
             <div id="location" class="location-wrap">
                 <div class="location-wrap-content">
-                <%= f.fields_for :locations do |section| %>
-                    <%= section.select :location_platform, options_for_select([['Monniepoint', 'monniepoint'], ['FirstMonie', 'firstmonie'], ['Opay', 'opay'], ['Paga', 'paga'], ['Momo', 'momo'], ['Paycentre', 'paycenter'], ['Other', 'other']], required: true) %>
-                    <%= section.text_field :location_est, class: 'form-control', :placeholder => "Year of establishment", required: true %>
-                    <%= section.text_field :location_geotag, class: 'form-control', :placeholder => "Year of establishment", required: true %>
-                <% end %> 
-                <div class="location-wrap-btn" onclick="addNewLocationForm()">Add New Location</div>
+                  <div id="locations-list">
+                    <%= f.fields_for :locations do |section| %>
+                      <%= render 'locations/location_fields', section: section %>
+                    <% end %>
+                  </div>
                 </div>
+                <%= link_to_add_fields('Add New Location', f, 'locations', :locations, 'location-wrap-btn') %>
             </div>
 
             <h2>Alajo(s)</h2>
